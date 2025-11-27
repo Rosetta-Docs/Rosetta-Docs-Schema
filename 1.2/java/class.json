@@ -52,6 +52,13 @@
         }
       ]
     },
+    "classes": {
+      "patternProperties": {
+        "^": {
+          "$ref": "class.json"
+        }
+      }
+    },
     "fields": {
       "type": "object",
       "minItems": 1,
