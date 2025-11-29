@@ -5,6 +5,10 @@
   "minProperties": 1,
   "additionalItems": true,
   "properties": {
+    "id": {
+      "type": "string",
+      "description": "A unique identifier for the file. This is used for references to dictionaries."
+    },
     "version": {
       "description": "The schema version for Rosetta. E.G: 1.2",
       "type": "string"
@@ -34,5 +38,5 @@
       "$ref": "1.2/tags.json"
     }
   },
-  "required": ["version"]
+  "required": ["version", "id"]
 }

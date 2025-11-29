@@ -9,17 +9,7 @@
       "type": "string"
     },
     "type": {
-      "anyOf": [
-        {
-          "$ref": "type.json"
-        },
-        {
-          "type": "string"
-        },
-        {
-          "type": "integer"
-        }
-      ]
+      "$ref": "type_reference.json"
     },
     "notes": {
       "type": "string"

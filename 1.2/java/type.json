@@ -19,17 +19,9 @@
     },
     "bounds": {
       "type": "array",
-      "anyOf": [
-        {
-          "$ref": "type.json"
-        },
-        {
-          "type": "string"
-        },
-        {
-          "type": "integer"
-        }
-      ]
+      "items": {
+        "anyOf": [{ "$ref": "type_reference.json" }]
+      }
     },
     "bounds_type": {
       "type": "string",
