@@ -1,9 +1,10 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Rosetta-Docs/Rosetta-Docs-Schema/refs/heads/1.2/1.2/java/package.json",
+  "$id": "http://rosetta-docs.com/schema/1.2/java/package.json",
   "type": "object",
   "minItems": 1,
   "additionalProperties": false,
+  "minProperties": 1,
   "properties": {
     "classes": {
       "patternProperties": {
@@ -18,6 +19,12 @@
           "$ref": "package.json"
         }
       }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "tags": {
+      "$ref": "../tags.json"
     }
   }
 }

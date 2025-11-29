@@ -1,15 +1,33 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Rosetta-Docs/Rosetta-Docs-Schema/refs/heads/1.2/1.2/java",
+  "$id": "http://rosetta-docs.com/schema/1.2/java.json",
   "type": "object",
   "additionalProperties": false,
+  "minProperties": 1,
   "properties": {
     "packages": {
       "type": "object",
-      "minItems": 1,
+      "minProperties": 1,
       "patternProperties": {
         "^": {
-          "$ref": "https://raw.githubusercontent.com/Rosetta-Docs/Rosetta-Docs-Schema/refs/heads/1.2/1.2/java/package.json"
+          "$ref": "java/package.json"
+        }
+      }
+    },
+    "types": {
+      "type": "object",
+      "description": "(Optional) A dictionary of unique integer-id type definitions to reference throughout the set.",
+      "minProperties": 1,
+      "patternProperties": {
+        "^": {
+          "anyOf": [
+            {
+              "$ref": "java/type.json"
+            },
+            {
+              "type": "string"
+            }
+          ]
         }
       }
     }

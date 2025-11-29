@@ -1,8 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Rosetta-Docs/Rosetta-Docs-Schema/refs/heads/1.2/1.2/java/return.json",
+  "$id": "http://rosetta-docs.com/schema/1.2/java/return.json",
   "type": "object",
   "additionalProperties": false,
+  "minProperties": 1,
   "properties": {
     "type": {
       "anyOf": [
@@ -11,8 +12,14 @@
         },
         {
           "type": "string"
+        },
+        {
+          "type": "integer"
         }
       ]
+    },
+    "nullable": {
+      "type": "boolean"
     },
     "notes": {
       "type": "string"

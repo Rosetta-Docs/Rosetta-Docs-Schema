@@ -1,9 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Rosetta-Docs/Rosetta-Docs-Schema/refs/heads/1.2/1.2/java/type.json",
+  "$id": "http://rosetta-docs.com/schema/1.2/java/type.json",
   "type": "object",
-  "minItems": 1,
   "additionalProperties": false,
+  "minProperties": 1,
   "required": ["base"],
   "properties": {
     "full": {
@@ -14,13 +14,33 @@
       "type": "string",
       "description": "The base type. This is required. E.G: String, int, List"
     },
-    "nullable": {
-      "type": "boolean",
-      "description": "Appends the 'null' type to the list of optional types."
+    "generic": {
+      "type": "boolean"
+    },
+    "bounds": {
+      "type": "array",
+      "anyOf": [
+        {
+          "$ref": "type.json"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "bounds_type": {
+      "type": "string",
+      "enum": ["extends", "super"]
     },
     "parameters": {
       "$ref": "generics.json",
       "description": "Required for generic sub-type parameters. For List<String>, \"base\" would be \"List\" and generics would be [{\"base\": \"String\"}]"
     }
+  },
+  "dependencies": {
+    "bounds": ["bounds_type"]
   }
 }

@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Rosetta-Docs/Rosetta-Docs-Schema/refs/heads/1.2/1.2/java/field.json",
+  "$id": "http://rosetta-docs.com/schema/1.2/java/field.json",
   "type": "object",
-  "minItems": 1,
+  "minProperties": 1,
   "additionalProperties": false,
   "properties": {
     "name": {
@@ -12,8 +12,25 @@
       "type": ["boolean", "string"],
       "description": "If the field is deprecated."
     },
-    "modifiers": {
-      "$ref": "modifiers.json"
+    "scope": {
+      "type": "string",
+      "enum": ["public", "package", "protected", "private"]
+    },
+    "static": {
+      "type": "boolean",
+      "description": "Default: False"
+    },
+    "final": {
+      "type": "boolean",
+      "description": "Default: False"
+    },
+    "transient": {
+      "type": "boolean",
+      "description": "Default: False"
+    },
+    "volatile": {
+      "type": "boolean",
+      "description": "Default: False"
     },
     "type": {
       "anyOf": [
@@ -22,13 +39,19 @@
         },
         {
           "type": "string"
+        },
+        {
+          "type": "integer"
         }
       ]
     },
-    "notes": {
-      "type": "string"
+    "nullable": {
+      "type": "boolean"
     },
     "defaultValue": {
+      "type": "string"
+    },
+    "notes": {
       "type": "string"
     },
     "tags": {
